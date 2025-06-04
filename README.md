@@ -82,6 +82,11 @@ Jika backend dijalankan di alamat selain `http://10.0.2.2:8000`, ubah nilai
 `BASE_URL` pada file `ApiConfig.kt`. Alamat tersebut digunakan oleh aplikasi
 Android untuk terhubung ke server FastAPI.
 
+#### Menjalankan Backend FastAPI
+1. Masuk ke direktori `diarydepresiku/backend`.
+2. Jalankan `pip install -r requirements.txt` untuk menginstal dependensi Python.
+3. Mulai server dengan perintah `uvicorn app.main:app --reload`.
+
 ---
 
 ## 🤖 AI & Sistem Rekomendasi
