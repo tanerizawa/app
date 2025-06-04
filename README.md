@@ -1,7 +1,24 @@
 # Diary Depresiku 📓💙  
 _Aplikasi Mobile Pendamping Kesehatan Mental_
 
-**Diary Depresiku** adalah prototipe aplikasi Android yang dirancang sebagai asisten digital harian untuk membantu pengguna mencatat perasaan, aktivitas, dan kondisi mental mereka. Tujuannya adalah memberikan dukungan mandiri berbasis teknologi bagi individu yang mengalami stres atau depresi, dengan mengombinasikan jurnal pribadi, analisis AI, dan konten rekomendasi.
+**Diary Depresiku** adalah prototipe Android dengan backend FastAPI untuk mencatat mood harian dan memberi insight berbasis AI. Proyek ini bertujuan membantu pengguna merawat kesehatan mental secara mandiri.
+
+---
+
+## 🚀 Cara Memulai
+
+### 1. Menjalankan Backend
+1. Masuk ke direktori `diarydepresiku/backend`.
+2. Jalankan `pip install -r requirements.txt` untuk menginstal dependensi.
+3. Mulai server dengan perintah `uvicorn app.main:app --reload`.
+
+### 2. Membangun Aplikasi Android
+1. Buka Android Studio dan pilih **Open** lalu arahkan ke folder `diarydepresiku/client`.
+   Atau jalankan `./gradlew assembleDebug` dari direktori tersebut.
+2. Setelah Gradle selesai, jalankan aplikasi di emulator atau perangkat.
+
+### 3. Konfigurasi `ApiConfig.kt`
+Ubah nilai `BASE_URL` pada `client/app/src/main/kotlin/com/example/diarydepresiku/ApiConfig.kt` agar sesuai dengan alamat backend.
 
 ---
 
@@ -76,16 +93,6 @@ _Aplikasi Mobile Pendamping Kesehatan Mental_
 - Rekomendasi: Rule-based + AI NLP Suggestion
 - API RESTful: autentikasi, entri, analisis, konten
 - Keamanan: HTTPS, token auth, enkripsi, audit log
-
-#### Konfigurasi Base URL
-Jika backend dijalankan di alamat selain `http://10.0.2.2:8000`, ubah nilai
-`BASE_URL` pada file `ApiConfig.kt`. Alamat tersebut digunakan oleh aplikasi
-Android untuk terhubung ke server FastAPI.
-
-#### Menjalankan Backend FastAPI
-1. Masuk ke direktori `diarydepresiku/backend`.
-2. Jalankan `pip install -r requirements.txt` untuk menginstal dependensi Python.
-3. Mulai server dengan perintah `uvicorn app.main:app --reload`.
 
 ---
 
