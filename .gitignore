@@ -1,0 +1,9 @@
+# Gradle/Android Studio outputs
+*.iml
+.gradle/
+build/
+
+# Python artifacts
+__pycache__/
+*.pyc
+diary.db
