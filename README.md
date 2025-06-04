@@ -77,6 +77,11 @@ _Aplikasi Mobile Pendamping Kesehatan Mental_
 - API RESTful: autentikasi, entri, analisis, konten
 - Keamanan: HTTPS, token auth, enkripsi, audit log
 
+#### Konfigurasi Base URL
+Jika backend dijalankan di alamat selain `http://10.0.2.2:8000`, ubah nilai
+`BASE_URL` pada file `ApiConfig.kt`. Alamat tersebut digunakan oleh aplikasi
+Android untuk terhubung ke server FastAPI.
+
 ---
 
 ## 🤖 AI & Sistem Rekomendasi
