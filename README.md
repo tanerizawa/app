@@ -1,160 +1,176 @@
-# Diary Depresiku 📓💙  
-_Aplikasi Mobile Pendamping Kesehatan Mental_
+# Diary Depresiku 📓💙
 
-**Diary Depresiku** adalah prototipe Android dengan backend FastAPI untuk mencatat mood harian dan memberi insight berbasis AI. Proyek ini bertujuan membantu pengguna merawat kesehatan mental secara mandiri.
+**Aplikasi Pendamping Kesehatan Mental Berbasis AI**
+
+**Diary Depresiku** adalah prototipe aplikasi Android dengan backend FastAPI yang memungkinkan pengguna mencatat suasana hati harian serta mendapatkan wawasan (insight) berbasis kecerdasan buatan (AI). Proyek ini dirancang untuk mendukung pengguna dalam merawat kesehatan mental secara mandiri.
 
 ---
 
 ## 🚀 Cara Memulai
 
 ### 1. Menjalankan Backend
-1. Masuk ke direktori `diarydepresiku/backend`.
-2. Jalankan `pip install -r requirements.txt` untuk menginstal dependensi.
-3. Mulai server dengan perintah `uvicorn app.main:app --reload`.
+
+```bash
+cd diarydepresiku/backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
 ### 2. Membangun Aplikasi Android
-1. Buka Android Studio dan pilih **Open** lalu arahkan ke folder `diarydepresiku/client`.
-   Atau jalankan `./gradlew assembleDebug` dari direktori tersebut.
-2. Setelah Gradle selesai, jalankan aplikasi di emulator atau perangkat.
+
+* **Menggunakan Android Studio**:
+
+  * Pilih **Open** dan buka folder `diarydepresiku/client`.
+  * Tekan tombol Run untuk menjalankan aplikasi pada emulator atau perangkat fisik.
+
+* **Menggunakan Command Line**:
+
+```bash
+cd diarydepresiku/client
+./gradlew assembleDebug
+```
 
 ### 3. Konfigurasi `ApiConfig.kt`
-Ubah nilai `BASE_URL` pada `client/app/src/main/kotlin/com/example/diarydepresiku/ApiConfig.kt` agar sesuai dengan alamat backend.
+
+Sesuaikan nilai `BASE_URL` di:
+
+```bash
+client/app/src/main/kotlin/com/example/diarydepresiku/ApiConfig.kt
+```
 
 ---
 
-## 🔍 Visi dan Tujuan
+## 🌟 Visi dan Misi
 
-> _"Menjadi ruang aman digital bagi pengguna untuk mengenali, merefleksikan, dan merawat kesehatan mental mereka melalui pencatatan harian dan dukungan berbasis AI."_
+> *Menjadi ruang digital yang aman bagi pengguna untuk mengenali, merefleksikan, dan merawat kesehatan mental secara mandiri melalui dukungan teknologi AI.*
 
-### Kenapa Diary Depresiku?
-- Lebih dari **12 juta** orang di Indonesia mengalami depresi (Riskesdas 2018).
-- Akses ke psikolog masih terbatas, terutama karena biaya dan lokasi.
-- Menulis jurnal terbukti membantu mengelola stres dan meningkatkan kesejahteraan emosional.
+### Mengapa Diary Depresiku?
+
+* Lebih dari **12 juta** penduduk Indonesia mengalami depresi (Riskesdas 2018).
+* Akses terbatas ke layanan kesehatan mental profesional.
+* Menulis jurnal terbukti efektif dalam meningkatkan kesejahteraan emosional.
 
 ---
 
 ## 🧠 Fitur Utama (MVP - Tahun Pertama)
 
-- **Catatan Emosi Harian**: Menulis perasaan dan suasana hati dalam teks bebas & mood tracker.
-- **Pelacakan Aktivitas & Lokasi** *(opsional)*: Mengambil data aktivitas & lokasi sebagai konteks emosi.
-- **Integrasi Google Fit**: Mengakses langkah harian & detak jantung dari perangkat yang kompatibel.
-- **Analisis Emosi AI**: Menggunakan AI (mis. OpenAI API) untuk membaca curhatan dan memberi insight.
-- **Rekomendasi Konten**: Artikel, kutipan, latihan pernapasan sesuai dengan suasana hati pengguna.
-- **Offline Support**: Bekerja tanpa internet & sinkronisasi otomatis saat online kembali.
-- **UI/UX Menenangkan**: Tampilan lembut dan intuitif, dengan warna pastel dan desain minimalis.
+* **Catatan Harian**: Input mood, catatan pribadi, dan aktivitas.
+* **Integrasi Google Fit**: Pelacakan aktivitas fisik dan detak jantung.
+* **Analisis Emosi Berbasis AI**: Membaca emosi dari teks dan memberikan insight.
+* **Rekomendasi Konten Personal**: Artikel, motivasi, dan latihan relaksasi sesuai mood.
+* **Offline Support**: Fungsi offline dengan sinkronisasi otomatis.
+* **UI/UX Menenangkan**: Desain lembut dan intuitif, menggunakan warna pastel minimalis.
 
 ---
 
-## 🌱 Fitur Lanjutan (Rencana Tahun Kedua)
+## 🌱 Fitur Lanjutan (Tahun Kedua)
 
-- Chat dengan psikolog dan integrasi layanan profesional.
-- Insight mood lanjutan, grafik mingguan/bulanan, deteksi pola depresi.
-- Rekomendasi konten personal berdasarkan histori emosi.
-- Gamifikasi: lencana pencapaian, tantangan refleksi mingguan.
-- Keamanan lanjut: login biometrik, enkripsi E2E, compliance HIPAA/PDPL.
-- Versi iOS & web (cross-platform, misalnya Flutter).
-
----
-
-## 🔁 Alur Kerja Pengguna
-
-1. **Buka Aplikasi** → Login/Register akun
-2. **Catat Mood & Aktivitas** → tulis curhatan, pilih mood, tambahkan aktivitas/foto
-3. **Simpan & Sinkronisasi** → data disimpan lokal dan/atau dikirim ke server
-4. **Analisis AI** → AI membaca emosi dan memberi saran konten relevan
-5. **Lihat Rekomendasi** → artikel/motivasi/tips relaksasi ditampilkan
-6. **Riwayat & Statistik** → pantau mood lewat grafik atau kalender
+* Chat langsung dengan psikolog.
+* Grafik analisis emosi mingguan/bulanan.
+* Gamifikasi: tantangan mingguan dan lencana.
+* Keamanan tingkat lanjut: biometrik dan enkripsi.
+* Versi lintas platform: iOS dan web menggunakan Flutter.
 
 ---
 
-## 🎨 Desain UI/UX
+## 🔄 Alur Pengguna
 
-- Warna: biru pastel (`#85C1E9`), hijau mint (`#A3E4D7`), aksen oranye lembut (`#F8C471`)
-- Font: **Roboto/Open Sans**, mudah dibaca
-- Navigasi: tab bar bawah (Diary, Riwayat, Profil)
-- Aksesibilitas: mode gelap, kontras tinggi, font scalable
-
----
-
-## 🏗️ Arsitektur Teknologi
-
-### Android Client
-- Bahasa: **Kotlin**
-- Arsitektur: **MVVM + Jetpack Components**
-- Penyimpanan lokal: **Room + Encrypted DB**
-- Networking: **Retrofit + JWT Auth**
-- Sensor: **Google Fit API, Location API**
-- Analisis cepat: Sentimen ringan di client (TF Lite)
-
-### Backend Server
-- Bahasa: **Python (FastAPI)** atau **Node.js**
-- Database: **PostgreSQL / MongoDB**
-- AI Integration: **OpenAI GPT-4 API**
-- Rekomendasi: Rule-based + AI NLP Suggestion
-- API RESTful: autentikasi, entri, analisis, konten
-- Keamanan: HTTPS, token auth, enkripsi, audit log
+1. **Login/Daftar** → akses aplikasi
+2. **Tulis Catatan Harian** → input mood dan aktivitas
+3. **Sinkronisasi Data** → lokal & server cloud
+4. **Analisis AI** → insight otomatis
+5. **Rekomendasi Konten** → artikel dan tips personal
+6. **Monitoring Mood** → grafik emosi dan statistik
 
 ---
 
-## 🤖 AI & Sistem Rekomendasi
+## 🎨 Panduan Desain UI/UX
 
-- **Emotion Detection** dari teks entri
-- **Topik kunci** diidentifikasi (misal "kerja", "kesepian")
-- **Saran kontekstual**: "Kamu terlihat stres, cobalah latihan pernapasan ini."
-- **Rekomendasi konten AI-aware**: AI memilih artikel dari daftar kurasi
-- **Privasi terjaga**: data dianonimkan sebelum dikirim ke AI
-
----
-
-## 📊 Integrasi Google Fit / Wear OS
-
-- Langkah harian, detak jantung, aktivitas fisik
-- Dapat membaca data dari jam tangan Wear OS via Google Fit
-- Insight seperti "Anda tidur < 5 jam semalam, mungkin ini memengaruhi mood Anda"
-- Semua data hanya diambil jika pengguna memberikan izin (opt-in)
+* **Warna**: Biru pastel (`#85C1E9`), hijau mint (`#A3E4D7`), oranye lembut (`#F8C471`)
+* **Tipografi**: Roboto & Open Sans
+* **Navigasi**: Bottom navigation (Diary, Riwayat, Profil)
+* **Aksesibilitas**: Mode gelap, font scalable, kontras tinggi
 
 ---
 
-## 🧪 Rencana Testing & Launch
+## ⚙️ Arsitektur Teknologi
+
+### Client (Android)
+
+* Bahasa: Kotlin
+* Arsitektur: MVVM + Jetpack Components
+* Penyimpanan: Room + Encrypted DB
+* Networking: Retrofit + JWT Auth
+* Sensor: Google Fit & Location API
+* Analisis Emosi Ringan: TensorFlow Lite
+
+### Backend (FastAPI)
+
+* Bahasa: Python
+* Database: PostgreSQL/MongoDB
+* Integrasi AI: OpenAI GPT-4 API
+* Keamanan: HTTPS, Token Auth, Audit Log
+
+---
+
+## 🤖 Kecerdasan Buatan & Rekomendasi
+
+* Deteksi emosi dari catatan teks
+* Identifikasi topik dan kondisi mood
+* Rekomendasi konten berdasarkan analisis teks
+* Privasi pengguna terjamin dengan data anonim
+
+---
+
+## 📊 Integrasi Google Fit & Wear OS
+
+* Data aktivitas fisik & kesehatan
+* Insight korelatif seperti pengaruh tidur pada mood
+* Data hanya diambil jika disetujui pengguna
+
+---
+
+## 🧪 Rencana Testing & Peluncuran
 
 ### Pengujian
-- Unit & Instrumented Test (Espresso, ViewModel logic)
-- Beta Internal: pengguna terbatas uji coba selama 2 minggu
-- Validasi oleh psikolog: konten & saran sesuai etika
-- Penetration testing dasar & load test API
+
+* Unit & Instrumented Testing
+* Internal Beta: Pengujian tertutup
+* Validasi konten oleh psikolog
+* Keamanan: Penetrasi dasar & load test API
 
 ### Peluncuran
-- **Q3 Tahun Pertama**: Closed Beta
-- **Q4 Tahun Pertama**: Open Beta via Play Store
-- **Tahun Kedua**: Versi resmi 1.0 + fitur premium
+
+* **Q3 Tahun Pertama**: Closed Beta
+* **Q4 Tahun Pertama**: Open Beta di Google Play
+* **Tahun Kedua**: Versi penuh & monetisasi premium
 
 ---
 
 ## 🗺️ Roadmap Pengembangan
 
-| Komponen           | Tahun Pertama (MVP)                              | Tahun Kedua (Skala & Monetisasi)                          |
-|--------------------|--------------------------------------------------|------------------------------------------------------------|
-| Tim                | Solo dev + freelance UI/UX                       | 5–7 orang (dev, AI/ML, QA, psikolog, desain)              |
-| Fitur              | Diary, mood form, rekomendasi AI, sinkronisasi   | Chat psikolog, gamifikasi, insight lanjutan, konten premium |
-| Teknologi          | Android Kotlin, API FastAPI, PostgreSQL          | Flutter (iOS), Docker/K8s cloud infra, AI custom model    |
-| Monetisasi         | Belum (early access gratis)                      | Freemium, B2B corporate wellness, konseling berbayar       |
-| Target Pengguna    | 1.000+ pengguna beta                             | 50.000+ pengguna aktif bulanan                            |
+| Komponen        | Tahun Pertama (MVP)                    | Tahun Kedua (Pertumbuhan & Monetisasi)          |
+| --------------- | -------------------------------------- | ----------------------------------------------- |
+| Tim             | Solo developer & freelancer UI/UX      | Tim 5-7 (Developer, AI, QA, Psikolog, Desainer) |
+| Fitur           | Diary, Insight AI, Google Fit, Offline | Psikolog online, Gamifikasi, Konten Premium     |
+| Teknologi       | Android Kotlin, FastAPI, PostgreSQL    | Flutter, Docker/Kubernetes, Custom AI           |
+| Monetisasi      | Early access gratis                    | Freemium, B2B wellness, Konseling berbayar      |
+| Target Pengguna | 1.000+ pengguna beta                   | 50.000+ pengguna aktif                          |
 
 ---
 
-## 📄 Disclaimer
+## ⚠️ Disclaimer
 
-> Diary Depresiku bukan pengganti konsultasi profesional. Jika Anda mengalami gangguan psikologis serius, hubungi tenaga medis atau layanan kesehatan mental terdekat.
+Diary Depresiku bukan pengganti bantuan profesional. Jika Anda mengalami masalah serius, segera hubungi tenaga kesehatan mental profesional.
 
 ---
 
 ## 📬 Kontak & Kontribusi
 
-Tertarik terlibat? Ingin menyumbangkan ide atau menjadi mitra psikolog? Silakan hubungi kami melalui [email@example.com] atau buat issue/pull request di repo ini.
+Tertarik berkontribusi atau bekerja sama? Hubungi kami di \[[studiomalaka@gmail.com](mailto:studiomalaka@gmail.com)] atau buat issue/pull request di repo ini.
 
 ---
 
-## 💡 Lisensi
+## 📜 Lisensi
 
-MIT License © 2025 – Tim Diary Depresiku
-
+Diary Depresiku © 2025, dilisensikan di bawah [MIT License](LICENSE).
