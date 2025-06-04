@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 
 from . import models, schemas, database
 from .database import engine, get_db
+from .dao import DiaryDao
 
 # Membuat objek FastAPI
 app = FastAPI()
@@ -20,6 +21,14 @@ def create_entry(entry: schemas.EntryCreate, db: Session = Depends(get_db)):
     db.commit()  # simpan perubahan
     db.refresh(db_entry)  # mengambil data lengkap (termasuk id dari database)
     return db_entry  # akan otomatis dikonversi ke schema Entry (Pydantic)
+
+
+# Endpoint untuk mendapatkan semua entri diary
+@app.get("/entries", response_model=list[schemas.Entry])
+def read_entries(db: Session = Depends(get_db)):
+    """Return all diary entries from the database."""
+    entries = DiaryDao.getAllEntries(db)
+    return entries
 
 # Endpoint dummy untuk analisis AI terhadap teks diary
 @app.post("/analyze", response_model=schemas.AnalyzeResponse)
