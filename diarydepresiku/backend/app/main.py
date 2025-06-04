@@ -1,5 +1,7 @@
 # main.py: Aplikasi FastAPI dan endpoint-endpoint API
 from fastapi import FastAPI, Depends
+from fastapi.middleware.cors import CORSMiddleware
+import os
 from sqlalchemy.orm import Session
 
 from . import models, schemas, database
@@ -8,6 +10,18 @@ from .dao import DiaryDao
 
 # Membuat objek FastAPI
 app = FastAPI()
+
+# Configure CORS so the API can be reached from other origins (e.g. the mobile
+# client during development). The allowed origins can be customized via the
+# ALLOWED_ORIGINS environment variable.
+origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Membuat tabel di database (jika belum ada)
 models.Base.metadata.create_all(bind=engine)
