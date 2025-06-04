@@ -12,9 +12,9 @@ class DiaryRepository(context: Context) {
     private val db = DiaryDatabase.getDatabase(context)
     private val diaryDao = db.diaryDao()
 
-    // Inisialisasi Retrofit untuk API (misal base URL lokal/emulator)
+    // Inisialisasi Retrofit untuk API menggunakan base URL dari konfigurasi
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://10.0.2.2:8000/") // 10.0.2.2 = localhost untuk emulator Android
+        .baseUrl(ApiConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     private val diaryApi = retrofit.create(DiaryApi::class.java)
